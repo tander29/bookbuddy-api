@@ -1,14 +1,14 @@
 require("dotenv-safe").config({ allowEmptyValues: true });
 const express = require('express')
 const morgan = require("morgan");
-const cors = require("cors");
 const { Client } = require('pg');
 const { User, sequelize } = require("./models");
 
-
 const app = express();
 
-app.use(cors());
+app.set("port", process.env.PORT || 5000);
+
+
 app.use(morgan("tiny"));
 app.use(express.json());
 
