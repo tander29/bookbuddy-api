@@ -5,9 +5,12 @@ const Sequelize = require("sequelize")
 const router = express.Router();
 const { User } = require("../Models")
 
-router.post("/register", (req, res) => {
+
+
+router.post("/login", (req, res) => {
     console.log("please work")
-    res.json({username: 'kyle', displayName: 'Please', password: 'kyle'})
+    //const { username, password } = req.body
+    res.json({username: 'kyle', password: 'kyle'})
     })
       
 
