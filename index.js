@@ -2,7 +2,7 @@ require("dotenv-safe").config({ allowEmptyValues: true });
 const express = require('express')
 const morgan = require("morgan");
 const { Client } = require('pg');
-const { User, sequelize } = require("./models");
+const { User, sequelize } = require("./Models");
 
 const app = express();
 
