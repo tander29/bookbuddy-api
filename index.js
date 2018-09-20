@@ -13,15 +13,15 @@ app.use(morgan("tiny"));
 app.use(express.json());
 
 const client = new Client({
-  connectionString: process.env.DATABASE_URL || 3000,
-  ssl: true,
+    connectionString: process.env.DATABASE_URL || 5000,
+    ssl: true,
 });
 
-app.get('/', (req, res) => {
-    res.send('Hello World!')
+app.get('/login', (req, res) => {
+    res.send({ stuff: 'vfgkj,ecd' })
 });
 
-app.listen(3000, () => {
+app.listen(5000, () => {
     console.log('app listening on port 3000!')
 });
 client.connect();
