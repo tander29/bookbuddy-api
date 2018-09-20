@@ -10,7 +10,7 @@ app.set("port", process.env.PORT || 5000);
 
 app.use(morgan("tiny"));
 app.use(express.json());
-app.use('cors')
+app.use(cors())
  app.get('/', (req, res) => {
     res.send({ stuff: 'vfgkj,ecd' })
     console.log('cors')
