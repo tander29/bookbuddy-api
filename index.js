@@ -1,27 +1,23 @@
 require("dotenv-safe").config({ allowEmptyValues: true });
 const express = require('express')
 const morgan = require("morgan");
-const cors = require("cors");
 const { Client } = require('pg');
-const { User, sequelize } = require("./models");
-
-
+const cors =require('cors')
 const app = express();
 
-app.use(cors());
+
+app.set("port", process.env.PORT || 5000);
+
 app.use(morgan("tiny"));
 app.use(express.json());
+app.use(cors())
+ app.get('/', (req, res) => {
+    res.send({ stuff: 'vfgkj,ecd' })
+    console.log('cors')
+ });
+ 
 
-const client = new Client({
-  connectionString: process.env.DATABASE_URL || 3000,
-  ssl: true,
-});
 
-app.get('/', (req, res) => {
-    res.send('Hello World!')
+app.listen(app.get("port"), () => {
+    console.log('app listening on port 5000!')
 });
-
-app.listen(3000, () => {
-    console.log('app listening on port 3000!')
-});
-client.connect();
