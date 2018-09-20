@@ -6,18 +6,23 @@ const { User, sequelize } = require("./models");
 
 const app = express();
 
-app.set("port", process.env.PORT || 3000);
+app.set("port", process.env.PORT || 5000);
 
 
 app.use(morgan("tiny"));
 app.use(express.json());
 
- 
- app.get('/login', (req, res) => {
+const client = new Client({
+    connectionString: process.env.DATABASE_URL || 5000,
+    ssl: true,
+});
+
+app.get('/login', (req, res) => {
     res.send({ stuff: 'vfgkj,ecd' })
- });
- 
- app.listen(3000, () => {
+});
+
+app.listen(5000, () => {
     console.log('app listening on port 3000!')
- });
- 
+});
+client.connect();
+
