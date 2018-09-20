@@ -2,5 +2,14 @@
   "name": "bookbuddy-api",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": "https://github.com/tander29/bookbuddy-api.git",
+  "author": "Kyle Meiklejohn <kmeiklejohn4@gmail.com>",
+  "dependencies": {
+    "dotenv-safe": "^6.0.0",
+    "express": "^4.16.3",
+    "pg": "^7.4.3",
+    "postgresql": "^0.0.1",
+    "sequelize": "^4.38.1"
+  }
 }
