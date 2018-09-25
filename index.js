@@ -15,7 +15,7 @@ app.use(cors())
 //app.use("/authorize", controllers.authorize);
 
 app.get('/', (req, res) => {
-    // res.send({ stuff: 'vfgkj,ecd' })
+     res.send('hello world')
     console.log('cors')
 });
 
