@@ -16,10 +16,10 @@ app.use(cors())
 
 app.get('/', (req, res) => {
     // res.send({ stuff: 'vfgkj,ecd' })
-    res.redirect('/authorize')
     console.log('cors')
 });
 
+app.use("/authorize", controllers.authorize);
 
 
 app.post("/authorize/login", (req, res) => {
@@ -28,8 +28,6 @@ app.post("/authorize/login", (req, res) => {
     res.json({username: 'kyle', password: 'kyle'})
     })
       
-
-
 app.listen(app.get("port"), () => {
-    console.log('app listening on port 5000!')
+    console.log('app listening on port 8000!')
 });
