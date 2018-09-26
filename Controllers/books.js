@@ -14,8 +14,7 @@ router.post('/', (req, res) => {
         )
         .then(book =>
             res.json({
-                title: book.get('title'),
-                author: book.get('author')
+                book:book
             }))
             .then(res.send(book))
             console.log({title})
