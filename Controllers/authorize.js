@@ -24,9 +24,19 @@ router.post("/register", (req, res) => {
   });
 
 router.post("/login", (req, res) => {
-    console.log("please work")
-    //const { username, password } = req.body
-    res.json({username: 'kyle', password: 'kyle'})
+    const {username, password, displayname} =req.body;
+      User.scope(null)
+        .find({where: {username}})
+        .then(User => {
+          if(User.password === User.get(password)){
+            const payload ={id: User.get('id'),}
+
+            res.json({id: payload.id, username, displayname, success:true})
+          }else{
+            res.json({success:false})
+          }
+        })
+
     })
       
 
