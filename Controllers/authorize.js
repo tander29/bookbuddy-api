@@ -38,6 +38,11 @@ router.post("/login", (req, res) => {
         })
 
     })
+
+  router.post("/logout", (req,res) =>{
+    req.getlogout();
+    res.json({success:true, message:'logged out',})
+  })
       
 
   module.exports= {
