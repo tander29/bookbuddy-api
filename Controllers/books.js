@@ -24,7 +24,7 @@ router.post('/', (req, res) => {
                 image: book.image
 
             }))
-            console.log(body)
+         console.log(req.body)
 })
 
 module.exports = router;
