@@ -17,6 +17,7 @@ router.post('/', (req, res) => {
             res.json({
                 book: book
             }))
+            .then(res.send({hey: "hey"}))
 })
 
 module.exports = {
