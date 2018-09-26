@@ -7,15 +7,23 @@ const Sequelize = require('sequelize')
 const {books} = require('../Models');
 
 router.post('/', (req, res) => {
-    const {title, author} = req.body;
+    const {title, author, isbn10, isbn13, image, rating} = req.body;
     books.create({
            title,
-           author
+           author,
+           isbn10,
+           isbn13,
+           image,
+           rating,
     })
         .then(book =>
             res.json({
                 title: book.title,
-                author: book.author
+                author: book.author,
+                isbn10: book.isbn10,
+                isbn13: book.isbn13,
+                rating: book.rating,
+
             }))
             console.log({title})
 })
