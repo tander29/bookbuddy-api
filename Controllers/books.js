@@ -7,7 +7,7 @@ const Sequelize = require('sequelize')
 const {books} = require('../Models');
 
 router.post('/', (req, res) => {
-    const {title, author} =
+    const {title, author} = req.body;
     books.create(
            title,
            author
