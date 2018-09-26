@@ -31,7 +31,7 @@ router.post("/login", (req, res) => {
           if(User.password === User.get("password")){
             const payload ={id: User.get('id'),}
 
-            res.json({id: payload.id, username, displayname, success:true})
+            res.json({id: payload.id, username, displayname, password, success:true})
           }else{
             res.json({success:false})
           }

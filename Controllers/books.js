@@ -5,17 +5,9 @@ const Sequelize = require('sequelize')
 
 const {books} = require('../Models');
 
-router.post('/', (req, res) => {
-    const {title, author} = req.body;
-    books.create(
-           title,
-           author
-        )
-        .then(book =>
-            res.json({
-                title: book.get('title'),
-                author: book.get('author')
-            }))
+router.post('/', (req, res) => {    
+            res.send({stuff: "please fucking work"
+            })
 })
 
 module.exports = {
