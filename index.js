@@ -12,7 +12,6 @@ app.use(morgan("tiny"));
 app.use(express.json());
 app.use(cors())
 
-//app.use("/authorize", controllers.authorize);
 
 app.get('/', (req, res) => {
     res.send('hello world')
@@ -21,12 +20,6 @@ app.get('/', (req, res) => {
 app.use("/authorize", controllers.authorize);
 app.use("/books", controllers.books)
 
-
-app.post("/authorize/login", (req, res) => {
-    console.log("please work")
-    //const { username, password } = req.body
-    res.json({ username: 'kyle', password: 'kyle' })
-})
 
 app.listen(app.get("port"), () => {
     console.log('app listening on port 8000!')
