@@ -22,6 +22,6 @@
     "start": "node index.js",
     "watch": "nodemon",
     "postinstall": "sequelize db:migrate --url $DATABASE_URL",
-    "heroku-prebuild": "yarn add -g sequelize-cli"
+    "heroku-prebuild": "yarn -g sequelize-cli"
   }
 }
