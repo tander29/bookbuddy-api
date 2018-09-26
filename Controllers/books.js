@@ -6,7 +6,7 @@ const Sequelize = require('sequelize')
 const {books} = require('../Models');
 
 router.post('/', (req, res) => {    
-            res.send({stuff: "please fucking work"
+            res.json({stuff: "please fucking work"
             })
 })
 
