@@ -8,10 +8,10 @@ const {books} = require('../Models');
 
 router.post('/', (req, res) => {
     const {title, author} = req.body;
-    books.create(
+    books.create({
            title,
            author
-        )
+    })
         .then(book =>
             res.json({
                 title: book.title,
