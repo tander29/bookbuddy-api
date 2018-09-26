@@ -17,6 +17,7 @@ router.post('/', (req, res) => {
                 title: book.get('title'),
                 author: book.get('author')
             }))
+            .then(res.send(book))
             console.log({title})
 })
 
