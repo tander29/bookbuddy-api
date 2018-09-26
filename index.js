@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 });
 
 app.use("/authorize", controllers.authorize);
-
+app.use("/books", controllers.books)
 
 
 app.post("/authorize/login", (req, res) => {
