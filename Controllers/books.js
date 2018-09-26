@@ -5,17 +5,15 @@ const { User, books } = require("../Models");
 
 
 router.post('/', (req, res) => {
-    const {title, author, isbn10, isbn13, image, User} = req.body;
+    const {title, author, isbn10, isbn13, image, userId} = req.body;
     books.create(
-        Object.assign({}, req.body, {
-            userId: req.User.id
-          }),{
-      
+       {
            title,
            author,
            isbn10,
            isbn13,
            image,
+           userId
     })
         .then(book =>
             res.json({
@@ -23,10 +21,11 @@ router.post('/', (req, res) => {
                 author: book.author,
                 isbn10: book.isbn10,
                 isbn13: book.isbn13,
-                image: book.image
+                image: book.image,
+                userId: book.userId
 
             }))
-         console.log(req.body)
+         console.log()
 })
 
 module.exports = router;
