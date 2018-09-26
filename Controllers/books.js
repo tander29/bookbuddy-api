@@ -3,9 +3,7 @@ const router = express.Router();
 const Sequelize = require('sequelize')
 
 
-const {
-    books
-} = require('../Models');
+const {books} = require('../Models');
 
 router.post('/', (req, res) => {
     books.create(
@@ -15,9 +13,9 @@ router.post('/', (req, res) => {
         )
         .then(book =>
             res.json({
-                book: book
+                title: book.get('title'),
+                author: book.get('author')
             }))
-            .then(res.send({hey: "hey"}))
 })
 
 module.exports = {
