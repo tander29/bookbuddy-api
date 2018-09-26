@@ -33,7 +33,7 @@ router.get("/", (req, res) => {
       limit: req.query.limit || 6,
       offset: req.query.offset || 0,
       order: [["createdAt", "DESC"]]
-    }).then(book => res.json({ ...book }));
+    }).then(Books => res.json({ ...Books }));
   });
 
 module.exports = router;
