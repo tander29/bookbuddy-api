@@ -8,7 +8,11 @@ const {books} = require('../Models');
 
 router.post('/', (req, res) => {
     const {title, author, isbn10, isbn13, image} = req.body;
-    books.create({
+    books.create(
+        Object.assign({}, req.body, {
+            userId: req.user.get("id")
+          }),{
+      
            title,
            author,
            isbn10,
