@@ -16,10 +16,10 @@ app.use(cors())
 
 app.get('/', (req, res) => {
      res.send('hello world')
-    console.log('cors')
 });
 
 app.use("/authorize", controllers.authorize);
+app.use('/messages', controllers.meessages)
 
 
 app.post("/authorize/login", (req, res) => {

@@ -8,7 +8,7 @@ const { User } = require("../Models")
 
 
 router.post("/register", (req, res) => {
-    const { username, displayName, password } = req.body;
+    const { username, displayname, password } = req.body;
     User.create({
       username,
       displayname,
