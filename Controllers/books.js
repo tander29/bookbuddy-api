@@ -1,8 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Sequelize = require('sequelize')
-
-//cpmstatadsfgasgfa
+const Sequelize = require('sequelize');
 
 const {books} = require('../Models');
 
@@ -30,10 +28,10 @@ router.post('/', (req, res) => {
 })
 router.get("/", (req, res) => {
     books.findAll({
-      limit: req.query.limit || 6,
+      limit: req.query.limit || 50,
       offset: req.query.offset || 0,
       order: [["createdAt", "DESC"]]
-    }).then(Books => res.json({ ...Books }));
+    }).then(book => res.json({ ...book }));
   });
 
 module.exports = router;
