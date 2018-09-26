@@ -1,16 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const Sequelize = require('sequelize')
+const { User, books } = require("../Models");
 
-//cpmstatadsfgasgfa
-
-const {books} = require('../Models');
 
 router.post('/', (req, res) => {
-    const {title, author, isbn10, isbn13, image} = req.body;
+    const {title, author, isbn10, isbn13, image, User} = req.body;
     books.create(
         Object.assign({}, req.body, {
-            userId: req.user.id
+            userId: req.User.id
           }),{
       
            title,
