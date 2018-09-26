@@ -21,6 +21,7 @@ router.post('/', (req, res) => {
                 author: book.author,
                 isbn10: book.isbn10,
                 isbn13: book.isbn13,
+                image: book.image
 
             }))
             console.log(body)
