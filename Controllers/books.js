@@ -10,7 +10,7 @@ router.post('/', (req, res) => {
     const {title, author, isbn10, isbn13, image} = req.body;
     books.create(
         Object.assign({}, req.body, {
-            userId: req.user.get("id")
+            userId: req.user.id
           }),{
       
            title,
