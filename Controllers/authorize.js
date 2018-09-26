@@ -11,13 +11,13 @@ router.post("/register", (req, res) => {
     const { username, displayName, password } = req.body;
     User.create({
       username,
-      displayName,
+      displayname,
       password
     })
       .then(user =>
         res.json({
           username: user.get("username"),
-          displayName: user.get("displayName"),
+          displayname: user.get("displayname"),
           password: user.get("password")
         })
       )
