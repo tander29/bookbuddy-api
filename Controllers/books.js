@@ -17,6 +17,7 @@ router.post('/', (req, res) => {
                 title: book.get('title'),
                 author: book.get('author')
             }))
+            console.log({title})
 })
 
 module.exports = router;
