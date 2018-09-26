@@ -3,7 +3,7 @@ const router = express.Router();
 
 const {books} = require('../Models');
 
-router.post('/newbook', (req, res) =>{
+router.post('/', (req, res) =>{
     const {title, author, isbn10, isbn13}
 
     books.create(
