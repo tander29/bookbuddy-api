@@ -10,3 +10,5 @@ router.post('/', (req,res) => {
         {text}
     ).then(addMessage => res.json({addMessage}))
 })
+
+module.exports = router;
