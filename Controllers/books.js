@@ -27,7 +27,7 @@ router.post('/', (req, res) => {
 })
 router.get("/", (req, res) => {
     books.findAll({
-      limit: req.query.limit || 50,
+      limit: req.query.limit || 10,
       offset: req.query.offset || 0,
       order: [["createdAt", "DESC"]]
     }).then(book => res.json({ ...book }));
