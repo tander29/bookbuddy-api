@@ -28,7 +28,7 @@ router.post("/login", (req, res) => {
       User.scope(null)
         .find({where: {username}})
         .then(User => {
-          if(user.password === User.get("password")){
+          if(password === User.get("password")){
             const payload ={id: User.get('id'),}
             console.log(password)
             res.json({id: payload.id, username, displayname, password, success:true})
