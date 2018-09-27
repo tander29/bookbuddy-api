@@ -10,6 +10,8 @@ const books = sequelize.import("./books")
 
 const message = sequelize.import("./message")
 
+User.hasMany(books)
+
 module.exports = {
   sequelize,
   books,
