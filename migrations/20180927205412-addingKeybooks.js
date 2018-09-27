@@ -6,7 +6,7 @@ module.exports = {
       `ALTER TABLE books
       ADD CONSTRAINT "books_userId_fkey"
         FOREIGN KEY ("userId")
-        REFERENCES Users(id)
+        REFERENCES "Users"(id)
         ON DELETE CASCADE;`
     )    
   },
