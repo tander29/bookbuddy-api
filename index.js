@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 
 app.use("/authorize", controllers.authorize);
 app.use("/books", controllers.books)
-
+app.use("/message", controllers.message)
       
 app.listen(app.get("port"), () => {
     console.log('app listening on port 8000!')
