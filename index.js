@@ -14,7 +14,7 @@ app.use(cors())
 
 
 app.get('/', (req, res) => {
-     res.send('hello world')
+     res.send('Heroku Server is runningx')
 });
 
 app.use("/authorize", controllers.authorize);

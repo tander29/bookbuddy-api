@@ -22,7 +22,6 @@ router.post('/', (req, res) => {
                 isbn13: book.isbn13,
                 image: book.image,
                 userId: book.userId
-
             }))
         
 })
