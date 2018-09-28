@@ -13,7 +13,7 @@ router.post('/', (req,res) => {
 })
 
 router.get('/', (req,res) => {
-    message.findAll({
+    Message.findAll({
         limit: req.query.limit || 10,
         offset: req.query.offset || 0,
         order: [["createdAt", "DESC"]]
