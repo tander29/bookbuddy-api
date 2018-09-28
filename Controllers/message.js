@@ -7,8 +7,10 @@ const router = express.Router();
 router.post('/', (req,res) => {
     const {text} = req.body;
     message.create(
-        {text}
-    ).then(addMessage => res.json({addMessage}))
+        Object.assign({}, req.body, {
+            userId: req.user.get("id")
+          })
+    ).then(Message => res.json({Message}))
 })
 
 router.get('/', (req,res) => {
