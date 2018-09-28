@@ -7,16 +7,17 @@ const router = express.Router();
 router.post('/', (req, res) => {
 
     const { text, userId } = req.body
-    console.log(text, req.body)
+    console.log("is this line 10?", text, req.body, req)
     message.create({
         text,
     }
-    ).then(messages => res.json(
-        {
+    ).then(messages => {
+        console.log(messages)
+        return res.json({
             text: messages.text,
             userId: messages.userId
-        }))
-    console.log(messages)
+        })
+    })
 })
 
 router.get('/', (req, res) => {
