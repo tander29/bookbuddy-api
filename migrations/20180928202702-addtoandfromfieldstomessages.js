@@ -12,8 +12,7 @@ module.exports = {
 
     return queryInterface.sequelize.query(
       `ALTER TABLE "Messages"
-    ADD COLUMN touserid INTEGER(2)
-    ADD COLUMN fromuserid INTEGER(2);
+       ADD COLUMN touserid INTEGER;
       `
     )
   },
@@ -22,8 +21,7 @@ module.exports = {
 
     return queryInterface.sequelize.query(
       `ALTER TABLE "Messages"
-    REMOVE touserid INTEGEr
-    REMOVE fromuserid INTEGER;
+       REMOVE touserid INTEGER
       `
     )
     /*
