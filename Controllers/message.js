@@ -11,4 +11,13 @@ router.post('/', (req,res) => {
     ).then(addMessage => res.json({addMessage}))
 })
 
+router.get('/', (req,res) => {
+    message.findAll({
+        limit: req.query.limit || 10,
+        offset: req.query.offset || 0,
+        order: [["createdAt", "DESC"]]
+      }).then(messages => res.json({messages}));
+})
+
+
 module.exports = router;
