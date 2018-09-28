@@ -11,19 +11,16 @@ module.exports = {
     */
 
     return queryInterface.sequelize.query(
-      `ALTER TABLE "Messages"
-       ADD COLUMN touserid INTEGER;
+      `
+      ALTER TABLE "Messages"
+      ADD COLUMN touserid INTEGER;
+      ALTER TABLE "Messages"
+      ADD COLUMN fromuserid INTEGER;
       `
     )
   },
 
   down: (queryInterface, Sequelize) => {
-
-    return queryInterface.sequelize.query(
-      `ALTER TABLE "Messages"
-       REMOVE touserid INTEGER
-      `
-    )
     /*
       Add reverting commands here.
       Return a promise to correctly handle asynchronicity.
@@ -31,5 +28,14 @@ module.exports = {
       Example:
       return queryInterface.dropTable('users');
     */
+
+    return queryInterface.sequelize.query(
+      `
+    ALTER TABLE "Messages"
+   DROP COLUMN touserid;
+   ALTER TABLE "Messages"
+   DROP COLUMN fromuserid;
+      `
+    )
   }
 };
