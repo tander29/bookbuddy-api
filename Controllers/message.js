@@ -5,10 +5,9 @@ const { User, books, message } = require("../Models");
 const router = express.Router();
 
 router.post('/', (req,res) => {
-    const {text} = req.body;
     message.create(
         Object.assign({}, req.body, {
-            userId: req.user.get("id")
+            userId: User.get("id")
           })
     ).then(Message => res.json({Message}))
 })
