@@ -1,15 +1,15 @@
 const express = require("express");
 const Sequelize = require("sequelize");
-const { User, books, message } = require("../Models");
+const { User, books, Message } = require("../Models");
 
 const router = express.Router();
 
 router.post('/', (req,res) => {
     const {text} = req.body
-    message.create({
+    Message.create({
         text
         }      
-    ).then(Message => res.json({text: Message.text}))
+    ).then(message => res.json({text: message.text}))
 })
 
 router.get('/', (req,res) => {
