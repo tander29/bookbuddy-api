@@ -30,7 +30,7 @@ router.post("/login", (req, res) => {
         .then(User => {
             if (password === User.get("password")) {
                 const payload = { id: User.get('id'), }
-
+                console.log(password)
                 res.json({ id: payload.id, username, displayname, password, success: true })
             } else {
                 res.json({ success: false })

@@ -13,6 +13,7 @@ router.post('/', (req, res) => {
         isbn13,
         image,
         userId
+
     })
         .then(book =>
             res.json({
@@ -21,14 +22,12 @@ router.post('/', (req, res) => {
                 isbn10: book.isbn10,
                 isbn13: book.isbn13,
                 image: book.image,
-                userId: book.userId
-
             }))
 
 })
 router.get("/", (req, res) => {
     books.findAll({
-        limit: req.query.limit || 50,
+        limit: req.query.limit || 10,
         offset: req.query.offset || 0,
         order: [["createdAt", "DESC"]]
     }).then(book => res.json({ ...book }));

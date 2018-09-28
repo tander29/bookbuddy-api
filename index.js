@@ -14,12 +14,12 @@ app.use(cors())
 
 
 app.get('/', (req, res) => {
-    res.send('hello world')
+    res.send('Heroku Server is runningx')
 });
 
 app.use("/authorize", controllers.authorize);
 app.use("/books", controllers.books)
-
+app.use("/message", controllers.message)
 
 app.listen(app.get("port"), () => {
     console.log(`app listening on port ${app.get("port")}`)

@@ -8,13 +8,15 @@ const User = sequelize.import("./User");
 
 const books = sequelize.import("./books")
 
-User.hasMany(books);
+const message = sequelize.import("./message")
 
-books.belongsTo(User);
+User.hasMany(books)
 
+books.belongsTo(User)
 
 module.exports = {
   sequelize,
   books,
-  User
+  User,
+  message
 };
