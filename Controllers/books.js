@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Sequelize = require('sequelize');
 
-const { books } = require('../Models');
+const { books, User } = require('../Models');
 
 router.post('/', (req, res) => {
     const { title, author, isbn10, isbn13, image, userId } = req.body;
@@ -30,11 +30,7 @@ router.get("/", (req, res) => {
         limit: req.query.limit || 10,
         offset: req.query.offset || 0,
         order: [["createdAt", "DESC"]]
-    }).then(book => res.json({ ...book }));
+    }).then(book => res.json({ book }));
 });
-
-
-
-
 
 module.exports = router;
