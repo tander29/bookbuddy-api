@@ -5,11 +5,17 @@ const { User, books, message } = require("../Models");
 const router = express.Router();
 
 router.post('/', (req,res) => {
-    const {text} = req.body
+    const {text, userId} = req.body
     message.create({
-        text 
+        text,
+        userId 
         }      
-    ).then(messages => res.json({text: messages.text}))
+    ).then(messages => res.json(
+        {
+            text: messages.text,
+            userId: messages.userId
+        }))
+        console.log(messages)
 })
 
 router.get('/', (req,res) => {
@@ -17,7 +23,7 @@ router.get('/', (req,res) => {
         limit: req.query.limit || 10,
         offset: req.query.offset || 0,
         order: [["createdAt", "DESC"]]
-      }).then(messages => res.json({messages}));
+      }).then(messages => res.json(console.log(messages)));
 })
 
 
