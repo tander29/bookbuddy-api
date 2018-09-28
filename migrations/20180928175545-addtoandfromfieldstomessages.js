@@ -23,7 +23,14 @@ module.exports = {
       Return a promise to correctly handle asynchronicity.
 
       Example:
-      return queryInterface.dropTable('users');
+      return queryInterface.dropTable('users');      
     */
+
+    return queryInterface.sequelize.query(
+      `
+    ALTER TABLE "Messages" REMOVE COLUMN toUserID INTEGER
+    ALTER TABLE "Messages" REMOVE COLUMN fromUserID INTEGER;
+    `
+    )
   }
 };
