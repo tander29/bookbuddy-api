@@ -5,7 +5,7 @@ const { User, books, Message } = require("../Models");
 const router = express.Router();
 
 router.post('/', (req,res) => {
-    const {text} = req.body.message
+    const {text} = req.body
     message.create({
         text 
         }      
