@@ -12,7 +12,7 @@ const message = sequelize.import("./message")
 
 User.hasMany(books)
 
-books.belongsTo(User)
+
 
 module.exports = {
   sequelize,
