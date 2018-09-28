@@ -25,10 +25,10 @@ router.post('/', (req, res) => {
 
 router.get('/', (req, res) => {
     message.findAll({
-        limit: req.query.limit || 10,
+        limit: req.query.limit || 100,
         offset: req.query.offset || 0,
         order: [["createdAt", "DESC"]]
-    }).then(messages => res.json(console.log(messages)));
+    }).then(messages => res.json({ messages: messages }));
 })
 
 
