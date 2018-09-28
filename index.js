@@ -2,7 +2,7 @@ require("dotenv-safe").config({ allowEmptyValues: true });
 const express = require('express')
 const morgan = require("morgan");
 const { Client } = require('pg');
-const cors = require('corgit pus')
+const cors = require('cors')
 const controllers = require("./Controllers")
 const app = express();
 
@@ -22,5 +22,5 @@ app.use("/books", controllers.books)
 
 
 app.listen(app.get("port"), () => {
-    console.log('app listening on port 8000!')
+    console.log(`app listening on port ${app.get("port")}`)
 });
