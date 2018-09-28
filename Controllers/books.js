@@ -13,7 +13,6 @@ router.post('/', (req, res) => {
         isbn13,
         image,
         userId
-
     })
         .then(book =>
             res.json({

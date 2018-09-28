@@ -6,16 +6,19 @@ const router = express.Router();
 
 router.post('/', (req, res) => {
 
-    const { text, userId } = req.body
+    const { text, fromuserid, touserid} = req.body
     console.log("is this line 10?", text, req.body, req)
     message.create({
         text,
+        fromuserid,
+        touserid
     }
     ).then(messages => {
         console.log(messages)
         return res.json({
             text: messages.text,
-            userId: messages.userId
+            fromuserid: message.fromuserid,
+            touserid: message.touserid
         })
     })
 })
