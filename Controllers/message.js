@@ -5,15 +5,15 @@ const { User, books, Message } = require("../Models");
 const router = express.Router();
 
 router.post('/', (req,res) => {
-    const {text} = req.body
-    Message.create({
-        text
+    const {text} = req.body.message
+    message.create({
+        text 
         }      
-    ).then(message => res.json({text: message.text}))
+    ).then(messages => res.json({text: messages.text}))
 })
 
 router.get('/', (req,res) => {
-    Message.findAll({
+    message.findAll({
         limit: req.query.limit || 10,
         offset: req.query.offset || 0,
         order: [["createdAt", "DESC"]]
