@@ -6,13 +6,8 @@ const router = express.Router();
 
 router.get("/:id", (req, res) => {
     const id = 2;
-    User.findById(id, {
-      include: [
-        {
-          model: books
-        }
-      ]
-    }).then(user => res.json({ user }));
+    User.findById(id)
+    .then(user => res.json({ user }));
   });
 
 router.patch("/", (req,res) => {
@@ -37,7 +32,6 @@ router.patch("/", (req,res) => {
     }
   })
     .then(_ => User.findOne({ where: { id: 2 } }))
-
 })
 
 module.exports = router;
