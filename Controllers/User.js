@@ -5,7 +5,7 @@ const { User, books } = require("../Models");
 const router = express.Router();
 
 router.get("/:id", (req, res) => {
-    const id = 1;
+    const id = 2;
     User.findById(id, {
       include: [
         {
@@ -33,10 +33,10 @@ router.patch("/", (req,res) => {
 
   User.update(patch, {
     where: {
-      id: 1
+      id: 2
     }
   })
-    .then(_ => User.findOne({ where: { id: 1 } }))
+    .then(_ => User.findOne({ where: { id: 2 } }))
 
 })
 
