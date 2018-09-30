@@ -3,7 +3,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.sequelize.query(
-      `ALTER TABLE books ADD COLUMN 'UserId' NOT NULL DEFAULT  '';`
+      `ALTER TABLE books ADD COLUMN ("UserId") NOT NULL DEFAULT  '';`
     );
     /*
       Add altering commands here.
@@ -23,7 +23,7 @@ module.exports = {
       return queryInterface.dropTable('users');
     */
     return queryInterface.sequelize.query(
-      `ALTER TABLE books DROP COLUMN 'UserId';`
+      `ALTER TABLE books DROP COLUMN ("UserId");`
     );
   }
 };
