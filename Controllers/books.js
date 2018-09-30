@@ -22,7 +22,7 @@ router.post('/', (req, res) => {
                 isbn10: book.isbn10,
                 isbn13: book.isbn13,
                 image: book.image,
-                rating: books.rating
+                rating: book.rating
             }))
 
 })
