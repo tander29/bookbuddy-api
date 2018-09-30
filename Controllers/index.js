@@ -1,4 +1,4 @@
-const user = require("./user");
+const user = require("./User");
 const { router } = require("./authorize");
 const books = require("./books")
 const message = require('./message')
