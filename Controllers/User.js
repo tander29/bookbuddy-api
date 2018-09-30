@@ -32,9 +32,12 @@ router.patch("/", (req,res) => {
     patch.about = update.about
   }
 
-  User.update(patch,{
-    where: req.user.id
+  User.update(patch, {
+    where: {
+      id: req.user.id
+    }
   })
+    .then(_ => User.findOne({ where: { id: req.user.id } }))
 
 })
 
