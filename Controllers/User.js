@@ -5,8 +5,9 @@ const { User, books } = require("../Models");
 const router = express.Router();
 
 router.get("/:id", (req, res) => {
-    const id = 2;
+    const id = req.params.id;
     User.findById(id)
+
     .then(user => res.json({ user }));
   });
 
