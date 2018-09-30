@@ -12,7 +12,6 @@ router.get("/:id", (req, res) => {
           model: books
         }
       ]
-      
     }).then(user => res.json({ user }));
   });
 
