@@ -33,10 +33,10 @@ router.patch("/", (req,res) => {
 
   User.update(patch, {
     where: {
-      id: req.user.id
+      id: 1
     }
   })
-    .then(_ => User.findOne({ where: { id: req.user.id } }))
+    .then(_ => User.findOne({ where: { id: 1 } }))
 
 })
 
