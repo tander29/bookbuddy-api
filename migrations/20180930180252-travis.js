@@ -3,7 +3,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.sequelize.query(
-      `ALTER TABLE books ADD COLUMN "UserId";`
+      `ALTER TABLE books ADD COLUMN "UserId" NOT NULL DEFAULT  '';`
     );
     /*
       Add altering commands here.
