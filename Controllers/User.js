@@ -7,8 +7,17 @@ const router = express.Router();
 router.get("/:id", (req, res) => {
     const id = req.params.id;
     User.findById(id)
-
     .then(user => res.json({ user }));
+  });
+
+  router.get("/", (req, res) => {
+    User.findAll({
+      limit: req.query.limit || 100,
+      offset: req.query.offset || 0,
+      order: [["createdAt", "DESC"]]
+    }).then(users => {
+      res.json({ users });
+    });
   });
 
 router.patch("/", (req,res) => {
