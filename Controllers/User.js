@@ -5,7 +5,7 @@ const { User, books } = require("../Models");
 const router = express.Router();
 
 router.get("/:id", (req, res) => {
-    const id = req.params.id;
+    const id = req.body.id;
     User.findById(id, {
       include: [
         {
