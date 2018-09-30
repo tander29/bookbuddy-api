@@ -36,8 +36,7 @@ router.patch("/", (req,res) => {
       id: 2
     }
   })
-    .then(_ => User.findOne({ where: { id: 2 } })
-    .then(res.send("bob")))
+    .then(_ => User.findOne({ where: { id: 2 } }))
 
 })
 
