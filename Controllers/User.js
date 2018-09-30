@@ -16,7 +16,7 @@ router.get("/:id", (req, res) => {
   });
 
 router.patch("/", (req,res) => {
-  const patch = {},
+  const patch = {};
   const update = req.body;
 
   if(update.username !== undefined){
