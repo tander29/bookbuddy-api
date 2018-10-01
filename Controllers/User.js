@@ -38,10 +38,19 @@ router.patch("/", (req,res) => {
 
   User.update(patch, {
     where: {
-      id: 2
+      id: req.user.id
     }
   })
     .then(_ => User.findOne({ where: { id: 2 } }))
+})
+
+router.delete("/", (req, res) => {
+  User.destroy({
+    where: {
+      id: req.user.id
+    }
+  })
+    .then(() => res.json({ id: req.user.id }))
 })
 
 module.exports = router;
