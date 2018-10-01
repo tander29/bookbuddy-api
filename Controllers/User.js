@@ -41,7 +41,7 @@ router.patch("/", (req,res) => {
       id: req.user.id
     }
   })
-    .then(_ => User.findOne({ where: { id: 2 } }))
+    .then(_ => User.findOne({ where: { id: req.user.id } }))
 })
 
 router.delete("/", (req, res) => {
