@@ -20,7 +20,13 @@ router.post("/register", (req, res) => {
                 displayname: user.get("displayname"),
                 password: user.get("password")
             })
-        )
+        ) .catch(error => {
+            if (error instanceof Sequelize.ValidationError) {
+              return res.status(400).send({ errors: error.errors });
+            }
+            console.error(error);
+            res.status(500).send();
+          });
 });
 
 router.post("/login", (req, res) => {
