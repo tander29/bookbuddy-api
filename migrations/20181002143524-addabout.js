@@ -4,7 +4,7 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.sequelize.query(
       `ALTER TABLE "Users"
-      ADD COLUMN about text`
+      ADD COLUMN about text;`
     )    
   },
 
