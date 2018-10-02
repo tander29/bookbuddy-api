@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
 app.use("/authorize", controllers.authorize);
 app.use("/books", controllers.books);
 app.use("/message", controllers.message);
-app.use("/User", controllers.user);
+app.use("/user", controllers.user);
 
 app.listen(app.get("port"), () => {
   console.log(`app listening on port ${app.get("port")}`);

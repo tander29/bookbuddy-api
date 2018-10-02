@@ -6,23 +6,40 @@ const router = express.Router();
 
 router.get("/:id", (req, res) => {
   const id = req.params.id;
-  User.findById(id, {
-    include: [
-      {
-        model: books
-      }
-    ]
-  }).then(user => res.json({ user }));
+  User.findById(id).then(user => res.json({ user }));
 });
 
-// router.get("/all", (req, res) => {
-//   user
-//     .findAll({
-//       limit: req.query.limit || 50,
-//       offset: req.query.offset || 0,
-//       order: [["createdAt", "DESC"]]
-//     })
-//     .then(user => res.json({ user: user }));
-// });
+router.get("/", (req, res) => {
+  User.findAll({
+    limit: req.query.limit || 10,
+    offset: req.query.offset || 0,
+    order: [["createdAt", "DESC"]]
+  }).then(users => {
+    res.json({ users });
+  });
+});
+
+router.patch("/", (req, res) => {
+  const patch = {};
+  const update = req.body;
+
+  if (update.username !== undefined) {
+    patch.username = update.username;
+  }
+
+  if (update.password !== undefined) {
+    patch.password = update.password;
+  }
+
+  if (update.about !== undefined) {
+    patch.about = update.about;
+  }
+
+  User.update(patch, {
+    where: {
+      id: 2
+    }
+  }).then(_ => User.findOne({ where: { id: 2 } }));
+});
 
 module.exports = router;
