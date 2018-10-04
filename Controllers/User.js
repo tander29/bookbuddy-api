@@ -11,7 +11,7 @@ router.get("/:id", (req, res) => {
 
 router.get("/", (req, res) => {
   User.findAll({
-    limit: req.query.limit || 10,
+    limit: req.query.limit || 100,
     offset: req.query.offset || 0,
     order: [["createdAt", "DESC"]]
   }).then(users => {
@@ -37,9 +37,17 @@ router.patch("/", (req, res) => {
 
   User.update(patch, {
     where: {
-      id: 2
+      id: req.user.id
     }
-  }).then(_ => User.findOne({ where: { id: 2 } }));
+  }).then(_ => User.findOne({ where: { id: req.user.id } }));
+});
+
+router.delete("/", (req, res) => {
+  User.destroy({
+    where: {
+      id: req.user.id
+    }
+  }).then(() => res.json({ id: req.user.id }));
 });
 
 module.exports = router;
