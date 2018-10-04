@@ -12,7 +12,7 @@ router.get("/:id", (req, res) => {
 
   router.get("/", (req, res) => {
     User.findAll({
-      limit: req.query.limit || 10,
+      limit: req.query.limit || 100,
       offset: req.query.offset || 0,
       order: [["createdAt", "DESC"]]
     }).then(users => {
