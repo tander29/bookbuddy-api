@@ -19,7 +19,7 @@ router.get("/", (req, res) => {
   });
 });
 
-gitrouter.patch("/", (req, res) => {
+router.patch("/", (req, res) => {
   const patch = {};
   const update = req.body;
 
