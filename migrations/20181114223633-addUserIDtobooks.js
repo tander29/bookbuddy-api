@@ -3,7 +3,8 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.sequelize.query(
-      `ALTER TABLE books ADD COLUMN ("UserId") NOT NULL DEFAULT  '';`
+      `ALTER TABLE "books"
+        ADD COLUMN "UserId" integer;`
     );
     /*
       Add altering commands here.
@@ -15,15 +16,10 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    /*
-      Add reverting commands here.
-      Return a promise to correctly handle asynchronicity.
-
-      Example:
-      return queryInterface.dropTable('users');
-    */
     return queryInterface.sequelize.query(
-      `ALTER TABLE books DROP COLUMN ("UserId");`
+      `
+  ALTER TABLE "books"
+  DROP COLUMN "UserId";`
     );
   }
 };
