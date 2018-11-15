@@ -16,6 +16,10 @@ clone/fork the repo
 
 > > heroku create
 
+<!-- if you want to give it a specific name do heroku create thisismyname -->
+
+> > use addons to make sure sequelize dtabase is created see step 5
+
 3.
 check to see if successful and pushing to right place
 
@@ -76,4 +80,10 @@ export DATABASE_URL=postgressurl/dbname with the following command make sure the
    > > is the nameofdb has capital letter like DatabaseName
    > > psql "DatabaseName"
 
-6. update the front end code url in the Redux/Types to be the local link
+6. update the front end code url in the Redux/Types to be the local link, the very bottom variable is what is being exported into other files for use in all of the redux/action files. Currently we named it heroku, but should be renamed to be fitting if you are switching between local and heroku deployment
+
+7. Future modifications to database after deployed to heroku and local will require a migration:
+   type in the folowing line to terminal get help, including the "$" sign
+"$(npm bin)/sequelize --help"
+   look for migration:generate, can type in
+   "\$(npm bin)/sequelize migration:generate --help"
