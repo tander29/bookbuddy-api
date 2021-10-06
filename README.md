@@ -63,7 +63,7 @@ add a database_url
 export DATABASE_URL=postgressurl/dbname with the following command make sure the postgres url is accurate
 
 > > export DATABASE_URL=postgresql://localhost:5432/dbname
-> > (I have "book" as my local db currently so use DATABASE_URL=postgresql://localhost:5432/bookgit stat)
+> > (I have "book" as my local db currently so use DATABASE_URL=postgresql://localhost:5432/book git stat)
 
 3. run yarn to make sure all dependences are installed
    the "env" command in the terminal shows the terminals local environment, export DATAbase command should

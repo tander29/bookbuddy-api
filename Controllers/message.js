@@ -7,7 +7,6 @@ const router = express.Router();
 router.post('/', (req, res) => {
 
     const { text, fromuserid, touserid} = req.body
-    console.log("is this line 10?", text, req.body, req)
     message.create({
         text,
         fromuserid,
