@@ -1,6 +1,9 @@
 {
   "name": "bookbuddy-api",
   "version": "1.0.0",
+  "engines": {
+    "node": "14.x"
+  },
   "main": "index.js",
   "license": "MIT",
   "repository": "https://github.com/tander29/bookbuddy-api.git",
