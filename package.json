@@ -24,7 +24,7 @@
     "start": "node index.js",
     "watch": "nodemon",
     "postinstall": "npx sequelize db:migrate --url $DATABASE_URL",
-    "heroku-prebuild": "npm install --save-dev sequelize-cli"
+    "heroku-prebuild": "npm install sequelize-cli"
   },
   "devDependencies": {
     "sequelize-cli": "^4.1.1"
