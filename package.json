@@ -24,7 +24,7 @@
     "start": "node index.js",
     "watch": "nodemon",
     "heroku-prebuild": "npm install sequelize-cli",
-    "build": "sequelize db:migrate --env production"
+    "build": "npx sequelize db:migrate --env production"
   },
   "devDependencies": {
     "sequelize-cli": "^4.1.1"
