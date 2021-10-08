@@ -9,6 +9,7 @@ const { User } = require("../Models")
 
 router.post("/register", (req, res) => {
     const { username, displayname, password } = req.body;
+    console.log(req.body);
     User.create({
         username,
         displayname,
@@ -32,7 +33,7 @@ router.post("/register", (req, res) => {
 router.post("/login", (req, res) => {
     const { username, password, displayname } = req.body;
     User.scope(null)
-        .find({ where: { username } })
+        .findOne({ where: { username } })
         .then(User => {
             if (password === User.get("password")) {
                 const payload = { id: User.get('id'), }
