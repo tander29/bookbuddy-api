@@ -22,9 +22,7 @@
   },
   "scripts": {
     "start": "node index.js",
-    "watch": "nodemon",
-    "heroku-prebuild": "npm install sequelize-cli",
-    "postinstall": "sequelize db:migrate --url $DATABASE_URL"
+    "watch": "nodemon"
   },
   "devDependencies": {
     "sequelize-cli": "^4.1.1"
